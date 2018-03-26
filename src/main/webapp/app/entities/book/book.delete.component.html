@@ -1,0 +1,43 @@
+<form name="addBookForm" #addBookForm="ngForm">
+    <mat-toolbar color="primary">
+        <span jhiTranslate="book.markSense.book.home.createLabel">Create a new Book</span>
+        <span><mat-icon>mood</mat-icon></span>
+    </mat-toolbar>
+
+    <mat-form-field class="matFormFieldClass">
+        <input matInput jhiTranslate="book.markSense.book.title" placeholder="Title"
+               [(ngModel)]="book.title" name="title">
+    </mat-form-field>
+
+    <mat-form-field class="matFormFieldClass">
+        <input matInput jhiTranslate="book.markSense.book.description" placeholder="Description"
+               [(ngModel)]="book.description" name="description">
+    </mat-form-field>
+
+    <mat-form-field class="matFormFieldClass">
+        <input matInput [matDatepicker]="picker" jhiTranslate="book.markSense.book.publicationDate"
+               placeholder="Publication Date" [(ngModel)]="book.publicationDate" name="publicationDate">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field class="matFormFieldClass">
+        <input matInput type="number" placeholder="Price" jhiTranslate="book.markSense.book.price" min="0"
+               [(ngModel)]="book.price" name="price">
+    </mat-form-field>
+
+    <mat-form-field class="matFormFieldClass">
+        <mat-select [ngModelOptions]="{standalone: true}" placeholder="Author" jhiTranslate="book.markSense.book.author"
+                    [(ngModel)]="book.author" #authorSelect="ngModel">
+            <mat-option *ngFor="let author of authors" [value]="author">
+                {{ author.lastName + ' ' + author.firstName }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <div class="divForButtons">
+        <button type="button" mat-raised-button color="accent" jhiTranslate="global.entity.save" (click)="deleteBook(book.id)">
+            Delete
+        </button>
+    </div>
+</form>

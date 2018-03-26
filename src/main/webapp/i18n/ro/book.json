@@ -1,0 +1,25 @@
+{
+    "markSenseApp": {
+        "book" : {
+            "home": {
+                "title": "Carti",
+                "createLabel": "Creaza o noua carte",
+                "createOrEditLabel": "Creaza sau editeaza o carte"
+            },
+            "created": "O noua carte a fost creata cu identificatorul {{ param }}",
+            "updated": "O carte a fost editata cu identificatorul {{ param }}",
+            "deleted": "O carte a fost stearsa cu identificatorul {{ param }}",
+            "delete": {
+                "question": "Esti sigur ca vrei sa stergi cartea {{ id }}?"
+            },
+            "detail": {
+                "title": "Carte"
+            },
+            "title": "Titlu",
+            "publicationDate": "Data publicatie",
+            "description": "Descriere",
+            "author": "Autor",
+            "price": "Pret"
+        }
+    }
+}

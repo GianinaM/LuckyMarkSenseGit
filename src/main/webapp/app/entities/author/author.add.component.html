@@ -1,0 +1,41 @@
+<div>
+    <mat-toolbar color="primary">
+        <span jhiTranslate="markSense.book.home.createLabel">Create a new Author</span>
+        <span><mat-icon>mood</mat-icon></span>
+    </mat-toolbar>
+
+    <mat-card>
+        <mat-form-field>
+            <input matInput jhiTranslate="markSense.author.lastName" placeholder="LastName" [(ngModel)]="author.lastName">
+        </mat-form-field>
+    </mat-card>
+
+    <mat-card>
+        <mat-form-field>
+            <input matInput jhiTranslate="markSense.author.firstName" placeholder="FirstName" [(ngModel)]="author.firstName">
+        </mat-form-field>
+    </mat-card>
+
+    <mat-card>
+        <mat-form-field>
+            <input matInput type="number" placeholder="Age" jhiTranslate="markSense.author.age" min="0" [(ngModel)]="author.age">
+        </mat-form-field>
+    </mat-card>
+
+    <mat-card>
+        <mat-form-field>
+            <input matInput [matDatepicker]="picker" jhiTranslate="markSense.author.birthDate" placeholder="Birth Date" [(ngModel)]="author.birthDate">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+    </mat-card>
+
+
+    <mat-card>
+        <button _ngcontent-c32="" color="accent" mat-raised-button="" class="mat-raised-button mat-accent" (click)="save()">
+            <span class="mat-button-wrapper">Add</span>
+            <div class="mat-button-ripple mat-ripple" matripple=""></div>
+            <div class="mat-button-focus-overlay"></div>
+        </button>
+    </mat-card>
+</div>
